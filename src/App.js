@@ -7,7 +7,7 @@ import Footer from './components/Footer'
 
 const styles = {
   body: {backgroundColor: `transparent`},
-  jumbo: {backgroundColor: 'transparent', marginTop: -35},
+  jumbo: {backgroundColor: 'transparent', marginTop: -25},
   title: {color: '#100', fontSize: 64, textAlign: 'center', fontFamily: 'Roboto, sans-serif', fontWeight: 100},
   sub: {color: '#100', textAlign: 'center'},
 }
