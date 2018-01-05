@@ -6,8 +6,8 @@ import FrontSlide from './components/FrontSlide'
 
 const styles = {
   body: {backgroundColor: `transparent`, height: window.innerHeight},
-  jumbo: {backgroundColor: 'transparent'},
-  title: {color: '#100'}
+  jumbo: {backgroundColor: 'transparent', marginTop: -50},
+  title: {color: '#100', fontSize: 64}
 }
 
 class App extends Component {
@@ -23,7 +23,7 @@ class App extends Component {
 
           </div>
         <header className="App-header">
-          <button type="button"  className="btn btn-outline-secondary" >reservations</button>
+          <button type="button"  className="btn btn-outline-secondary">reservations</button>
         </header>
         <p className="App-intro">
 
