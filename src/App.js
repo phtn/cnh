@@ -3,6 +3,7 @@ import './animate.css';
 import './bootstrap.min.css'
 import bg from './assets/pattern.png'
 import FrontSlide from './components/FrontSlide'
+import Reservations from './components/Reservations'
 import Footer from './components/Footer'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -13,6 +14,9 @@ const styles = {
   title: {color: '#100', fontSize: 64, textAlign: 'center', fontFamily: 'Roboto, sans-serif', fontWeight: 100},
   res: {color: '#100', fontSize: 52, textAlign: 'center', fontFamily: 'Roboto, sans-serif', fontWeight: 100},
   sub: {color: '#100', textAlign: 'center'},
+  img: {diplay: 'block', width: '100%', height: 'auto'},
+  badge: {marginRight: 10}
+
 }
 const settings = {
   dots: false,
@@ -46,35 +50,17 @@ class App extends Component {
             <FrontSlide/>
           </div>
       </div>
-
-      <div className="animated fadeIn" style={styles.body}>
-        <div className="jumbotron" style={styles.jumbo}>
-          <h3 className="display-4 animated fadeInDown" style={styles.res}>RESERVATIONS</h3>
-          <button type="button"  className="btn btn-outline-secondary">215-862-5221</button>
-          <button type="button"  className="btn btn-outline-secondary">GROUP RESERVATIONS</button>
-          <hr className="my-4 animated fadeInRight"/>
-            
-          <div className="list-group">
-            <a href="#" className="list-group-item list-group-item-action flex-column align-items-start active">
-              <div className="d-flex w-100 justify-content-between">
-                <h5 className="mb-1">single king bed</h5>
-                <small>GOOD FOR 2</small>
-              </div>
-              
-            </a>
-            <a href="#" className="list-group-item list-group-item-action flex-column align-items-start">
-              <div className="d-flex w-100 justify-content-between">
-                <h5 className="mb-1">Amenities:</h5>
-                
-              </div>
-              <span className="badge badge-success">High-Speed Wifi</span>
-              <span className="badge badge-success">Professional Business Center</span>
-            </a>
-          </div>
-
-          </div>
+      
+      <div>
+        <Reservations 
+          body={styles.body} 
+          jumbo={styles.jumbo} 
+          res={styles.res} 
+          img={styles.img}
+          badge={styles.badge}
+          />
       </div>
-
+      
       </Slider>
       <Footer click={reserv}/>
       </div>
