@@ -1,4 +1,6 @@
 import React from 'react'
+import Slider from 'react-slick'
+
 const styles={
   container: {
     backgroundColor: 'rgba(0,0,0, 0.9)',
@@ -10,19 +12,20 @@ const styles={
     textAlign: 'center'
   }
 }
+const settings = {
+  dots: false,
+  infinite: true,
+  speed: 1000,
+  arrows: true,
+  autoplay: false,
+  autoplaySpeed: 5000,
+  fade: true,
+}
 export default props => (
   <div style={styles.container}>
-    <button type="button" onClick={props.click} className="btn btn-outline-secondary">reservations</button>
+    <Slider {...settings}>
+      <div><button type="button" onClick={props.click} className="btn btn-outline-secondary">reservations</button></div>
+      <div><button type="button" onClick={props.click} className="btn btn-outline-secondary">group reservations</button></div>
+    </Slider>
   </div>
 )
-
-// .App-header {
-//   background-color: #222;
-//   height: 150px;
-//   line-height: 100px;
-//   padding: 20px;
-//   color: white;
-//   position: fixed;
-//   width: 100%;
-//   bottom: 0;
-// }

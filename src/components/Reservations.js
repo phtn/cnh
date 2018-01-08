@@ -7,6 +7,7 @@ import GSK1 from '../assets/erGSK1_40.jpg'
 import GSK2 from '../assets/erGSK2_40.jpg'
 import GSK3 from '../assets/erGSK3_40.jpg'
 
+
 export default props => (
   <div className="animated fadeIn" style={props.body}>
     <div className="jumbotron" style={props.jumbo}>
