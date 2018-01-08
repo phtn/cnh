@@ -12,7 +12,7 @@ const styles={
 }
 export default props => (
   <div style={styles.container}>
-    <button type="button"  className="btn btn-outline-secondary">reservations</button>
+    <button type="button" onClick={props.click} className="btn btn-outline-secondary">reservations</button>
   </div>
 )
 
