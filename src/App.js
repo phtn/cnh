@@ -45,7 +45,7 @@ class App extends Component {
       <div className="animated fadeIn" style={styles.body}>
         <div className="jumbotron" style={styles.jumbo}>
           <h1 className="display-3 animated fadeInDown" style={styles.title}>Clarion</h1>
-          <h6 className="display-6 text-muted animated fadeInUp" style={styles.sub}>NEW HOPE - LAMBERTVILLE</h6>
+          <h6 className="display-6 text-muted animated fadeInUp" style={styles.sub}>NEW HOPE &middot; LAMBERTVILLE</h6>
           <hr className="my-4 animated fadeInRight"/>
             <FrontSlide/>
           </div>

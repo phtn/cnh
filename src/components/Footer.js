@@ -24,7 +24,7 @@ const settings = {
 export default props => (
   <div style={styles.container}>
     <Slider {...settings}>
-      <div><button type="button" onClick={props.click} className="btn btn-outline-secondary">reservations</button></div>
+      <div><button type="button" onClick={props.click} className="btn btn-outline-secondary">reservations 215-862-5221</button></div>
       <div><button type="button" onClick={props.click} className="btn btn-outline-secondary">group reservations</button></div>
     </Slider>
   </div>
