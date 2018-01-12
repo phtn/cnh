@@ -1,15 +1,5 @@
 import React from 'react'
-const styles = {
-  container: {
-    display: 'flex',
-    width: '100%',
-    // justifyContent: 'center',
-    // alignItems: 'center'
-  },
-  tag: {
-    textAlign: 'center'
-  }
-}
+
 export default props => (
   
     <blockquote className='blockquote text-center'>

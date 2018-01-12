@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './animate.css';
 import './bootstrap.min.css'
-import bg from './assets/pattern.png'
 import FrontSlide from './components/FrontSlide'
 import Reservations from './components/Reservations'
 import Group from './components/Group'
@@ -31,13 +30,6 @@ const settings = {
 }
 
 class App extends Component {
-  componentDidMount(){
-    
-  }
-  gotoRes(){
-    // this.refs.slider.slickGoTo(2)
-    console.log('test')
-  }
   render() {
     const home =()=> this.refs.slider.slickGoTo(0)
     const reserve =()=> this.refs.slider.slickGoTo(1)

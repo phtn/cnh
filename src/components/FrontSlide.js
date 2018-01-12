@@ -1,5 +1,5 @@
 import React from 'react'
-import POOL3 from '../assets/pool3.jpg'
+// import POOL3 from '../assets/pool3.jpg'
 import REST1 from '../assets/erREST_40_1.jpg'
 import POOL1 from '../assets/pool3.jpg'
 import POOL2 from '../assets/pool2.jpg'
@@ -11,7 +11,7 @@ import NH1 from '../assets/erNH_40.jpg'
 import Tagline from './Tagline'
 
 
-import Slider from 'react-slick'
+// import Slider from 'react-slick'
 
 const styles = {
   card: {height: '100%', padding: 0, backgroundColor: 'rgba(17,0,0, 0.3)'},
@@ -19,20 +19,8 @@ const styles = {
   col: {marginBottom: 20},
   slide: {width: 'auto'}
 }
-const settings = {
-  dots: false,
-  infinite: true,
-  speed: 1000,
-  arrows: false,
-  autoplay: false,
-  autoplaySpeed: 5000,
-  fade: true,
-}
-const imgArr = [LOB1, REST1]
-const slider = () => {
-  return LOB1
-  
-}
+
+
 // REST2
 export default props => (
   <div className="container">
@@ -41,19 +29,19 @@ export default props => (
     
       <div className="col-sm"  style={styles.col}>
         <div className="card" style={styles.card}>
-          <img style={styles.img} src={slider()} />
+          <img style={styles.img} src={LOB1} alt=''/>
         </div>
       </div>
       
       <div className="col-sm"  style={styles.col}>
         <div className="card" style={styles.card}>
-          <img style={styles.img} src={REST1} />
+          <img style={styles.img} src={REST1} alt=''/>
         </div>
       </div>
 
       <div className="col-sm"  style={styles.col}>
         <div className="card" style={styles.card}>
-          <img style={styles.img} src={BRK1} />
+          <img style={styles.img} src={BRK1} alt=''/>
         </div>
       </div>
 
@@ -64,7 +52,7 @@ export default props => (
     <div className='row'>
       <div className="col-sm"  style={styles.col}>
         <div className="card" style={styles.card}>
-          <img style={styles.img} src={LOB2} />
+          <img style={styles.img} src={LOB2} alt=''/>
         </div>
       </div>
     </div>
@@ -72,7 +60,7 @@ export default props => (
     <div className='row'>
       <div className="col-sm"  style={styles.col}>
         <div className="card" style={styles.card}>
-          <img style={styles.img} src={POOL1} />
+          <img style={styles.img} src={POOL1} alt=''/>
         </div>
       </div>
     </div>
@@ -80,7 +68,7 @@ export default props => (
     <div className='row'>
       <div className="col-sm"  style={styles.col}>
         <div className="card" style={styles.card}>
-          <img style={styles.img} src={POOL2} />
+          <img style={styles.img} src={POOL2} alt=''/>
         </div>
       </div>
     </div>
@@ -88,7 +76,7 @@ export default props => (
     <div className='row'>
       <div className="col-sm"  style={styles.col}>
         <div className="card" style={styles.card}>
-          <img style={styles.img} src={BRK2} />
+          <img style={styles.img} src={BRK2} alt=''/>
         </div>
       </div>
     </div>
@@ -96,7 +84,7 @@ export default props => (
     <div className='row'>
       <div className="col-sm"  style={styles.col}>
         <div className="card" style={styles.card}>
-          <img style={styles.img} src={NH1} />
+          <img style={styles.img} src={NH1} alt=''/>
         </div>
       </div>
     </div>

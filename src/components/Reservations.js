@@ -14,29 +14,29 @@ export default props => (
       <h3 className="display-4 animated fadeInDown" style={props.res}>RESERVATIONS</h3>
         
       <div className="list-group">
-        <a href="#" className="list-group-item list-group-item-action flex-column align-items-start active">
+        <a href="" className="list-group-item list-group-item-action flex-column align-items-start active">
           <div className="d-flex w-100 justify-content-between">
             <h5 className="mb-1">single king bed</h5>
             <small>GOOD FOR 2</small>
           </div>
         </a>
 
-        <a href="#" className="list-group-item list-group-item-action flex-column align-items-start active">
+        <a href="" className="list-group-item list-group-item-action flex-column align-items-start active">
           <div className="d-flex w-100 justify-content-between">
           
           <div className='col-lg'>
             <div className='card'>
-              <img style={props.img} src={NK1} />
+              <img style={props.img} src={NK1} alt=''/>
             </div>
             
             <div className='card'>
-              <img style={props.img} src={NK2} />
+              <img style={props.img} src={NK2} alt=''/>
             </div>
             </div>
           </div>
         </a>
 
-        <a href="#" className="list-group-item list-group-item-action flex-column align-items-start">
+        <a href="" className="list-group-item list-group-item-action flex-column align-items-start">
           <div className="d-flex w-100 justify-content-between">
             <h5 className="mb-1">Amenities:</h5>
             
@@ -57,29 +57,29 @@ export default props => (
 
 
       <div className="list-group">
-        <a href="#" className="list-group-item list-group-item-action flex-column align-items-start active">
+        <a href="" className="list-group-item list-group-item-action flex-column align-items-start active">
           <div className="d-flex w-100 justify-content-between">
             <h5 className="mb-1">2 double beds</h5>
             <small>GOOD FOR 4</small>
           </div>
         </a>
 
-        <a href="#" className="list-group-item list-group-item-action flex-column align-items-start active">
+        <a href="" className="list-group-item list-group-item-action flex-column align-items-start active">
           <div className="d-flex w-100 justify-content-between">
           
           <div className='col-lg'>
             <div className='card'>
-              <img style={props.img} src={NDD1} />
+              <img style={props.img} src={NDD1} alt=''/>
             </div>
             
             <div className='card'>
-              <img style={props.img} src={NK2} />
+              <img style={props.img} src={NK2} alt=''/>
             </div>
             </div>
           </div>
         </a>
 
-        <a href="#" className="list-group-item list-group-item-action flex-column align-items-start">
+        <a href="" className="list-group-item list-group-item-action flex-column align-items-start">
           <div className="d-flex w-100 justify-content-between">
             <h5 className="mb-1">Amenities:</h5>
             
@@ -99,29 +99,29 @@ export default props => (
 
 
       <div className="list-group">
-        <a href="#" className="list-group-item list-group-item-action flex-column align-items-start active">
+        <a href="" className="list-group-item list-group-item-action flex-column align-items-start active">
           <div className="d-flex w-100 justify-content-between">
             <h5 className="mb-1">single king suite</h5>
             <small>GOOD FOR 4</small>
           </div>
         </a>
 
-        <a href="#" className="list-group-item list-group-item-action flex-column align-items-start active">
+        <a href="" className="list-group-item list-group-item-action flex-column align-items-start active">
           <div className="d-flex w-100 justify-content-between">
           
           <div className='col-lg'>
             <div className='card'>
-              <img style={props.img} src={NK1} />
+              <img style={props.img} src={NK1} alt=''/>
             </div>
             
             <div className='card'>
-              <img style={props.img} src={SA} />
+              <img style={props.img} src={SA} alt=''/>
             </div>
             </div>
           </div>
         </a>
 
-        <a href="#" className="list-group-item list-group-item-action flex-column align-items-start">
+        <a href="" className="list-group-item list-group-item-action flex-column align-items-start">
           <div className="d-flex w-100 justify-content-between">
             <h5 className="mb-1">Amenities:</h5>
             
@@ -141,29 +141,29 @@ export default props => (
 
 
       <div className="list-group">
-        <a href="#" className="list-group-item list-group-item-action flex-column align-items-start active">
+        <a href="" className="list-group-item list-group-item-action flex-column align-items-start active">
           <div className="d-flex w-100 justify-content-between">
             <h5 className="mb-1">2 double bed suite</h5>
             <small>GOOD FOR 4</small>
           </div>
         </a>
 
-        <a href="#" className="list-group-item list-group-item-action flex-column align-items-start active">
+        <a href="" className="list-group-item list-group-item-action flex-column align-items-start active">
           <div className="d-flex w-100 justify-content-between">
           
           <div className='col-lg'>
             <div className='card'>
-              <img style={props.img} src={NDD1} />
+              <img style={props.img} src={NDD1} alt=''/>
             </div>
             
             <div className='card'>
-              <img style={props.img} src={SA} />
+              <img style={props.img} src={SA} alt=''/>
             </div>
             </div>
           </div>
         </a>
 
-        <a href="#" className="list-group-item list-group-item-action flex-column align-items-start">
+        <a href="" className="list-group-item list-group-item-action flex-column align-items-start">
           <div className="d-flex w-100 justify-content-between">
             <h5 className="mb-1">Amenities:</h5>
             
@@ -185,27 +185,27 @@ export default props => (
 
 
       <div className="list-group">
-        <a href="#" className="list-group-item list-group-item-action flex-column align-items-start active">
+        <a href="" className="list-group-item list-group-item-action flex-column align-items-start active">
           <div className="d-flex w-100 justify-content-between">
             <h5 className="mb-1">grand king suite</h5>
             <small>GOOD FOR 2</small>
           </div>
         </a>
 
-        <a href="#" className="list-group-item list-group-item-action flex-column align-items-start active">
+        <a href="" className="list-group-item list-group-item-action flex-column align-items-start active">
           <div className="d-flex w-100 justify-content-between">
           
           <div className='col-lg'>
             <div className='card'>
-              <img style={props.img} src={GSK1} />
+              <img style={props.img} src={GSK1} alt=''/>
             </div>
             
             <div className='card'>
-              <img style={props.img} src={GSK2} />
+              <img style={props.img} src={GSK2} alt=''/>
             </div>
             
             <div className='card'>
-              <img style={props.img} src={GSK3} />
+              <img style={props.img} src={GSK3} alt=''/>
             </div>
             
             </div>
@@ -214,7 +214,7 @@ export default props => (
           </div>
         </a>
 
-        <a href="#" className="list-group-item list-group-item-action flex-column align-items-start">
+        <a href="" className="list-group-item list-group-item-action flex-column align-items-start">
           <div className="d-flex w-100 justify-content-between">
             <h5 className="mb-1">Amenities:</h5>
             
