@@ -4,6 +4,7 @@ import './bootstrap.min.css'
 import bg from './assets/pattern.png'
 import FrontSlide from './components/FrontSlide'
 import Reservations from './components/Reservations'
+import Group from './components/Group'
 import Footer from './components/Footer'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -26,6 +27,7 @@ const settings = {
   autoplay: false,
   autoplaySpeed: 5000,
   fade: false,
+  initialSlide: 2
 }
 
 class App extends Component {
@@ -37,7 +39,9 @@ class App extends Component {
     console.log('test')
   }
   render() {
-    const reserv =()=> this.refs.slider.slickGoTo(1)
+    const home =()=> this.refs.slider.slickGoTo(0)
+    const reserve =()=> this.refs.slider.slickGoTo(1)
+    const group =()=> this.refs.slider.slickGoTo(2)
     return (
       <div>
       <Slider {...settings} ref='slider'>
@@ -60,9 +64,13 @@ class App extends Component {
           badge={styles.badge}
           />
       </div>
+
+      <div className="animated fadeIn" style={styles.body}>
+        <Group/>
+      </div>
       
       </Slider>
-      <Footer click={reserv}/>
+      <Footer reserve={reserve} group={group} home={home}/>
       </div>
     )
   }

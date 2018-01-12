@@ -9,12 +9,15 @@ const styles={
     position: 'fixed',
     bottom: 0,
     width: '100%',
-    textAlign: 'center'
-  }
+    textAlign: 'center',
+  },
+  button: {marginRight: 5}
 }
 
 export default props => (
   <div style={styles.container}>
-    <button type="button" onClick={props.click} className="btn btn-outline-secondary">reservations 215-862-5221</button>
+    <button type="button" onClick={props.home} className="btn btn-outline-secondary" style={styles.button}>home</button>
+    <button type="button" onClick={props.reserve} className="btn btn-outline-secondary" style={styles.button}>reservations</button>
+    <button type="button" onClick={props.group} className="btn btn-outline-secondary" style={styles.button}>group</button>
   </div>
 )
