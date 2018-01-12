@@ -26,7 +26,7 @@ const settings = {
   autoplay: false,
   autoplaySpeed: 5000,
   fade: false,
-  initialSlide: 2
+  initialSlide: 0
 }
 
 class App extends Component {
