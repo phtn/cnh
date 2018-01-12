@@ -3,17 +3,21 @@ import React from 'react'
 const styles = {
   body: {backgroundColor: `transparent`, textAlign: 'center'},
   jumbo: {backgroundColor: 'transparent', marginTop: -25},
-  res: {color: '#100', fontSize: 24, textAlign: 'center', fontFamily: 'Roboto, sans-serif', fontWeight: 100},
+  res: {color: '#100', fontSize: 30, textAlign: 'center', fontFamily: 'Roboto, sans-serif', fontWeight: 100},
   sub: {color: '#100', textAlign: 'center'},
   img: {diplay: 'block', width: '100%', height: 'auto'},
   badge: {marginRight: 10}
+}
+const submit = e => {
+  e.preventDefault()
+  console.log('test')
 }
 export default props => (
   <div>
     <div className="animated fadeIn" style={styles.body}>
     <div className="jumbotron" style={styles.jumbo}>
       <h3 className="display-4 animated fadeInDown" style={styles.res}>GROUP RESERVATIONS</h3>
-      <h6 className="display-6 text-muted animated fadeInUp" style={styles.sub}>WEDDINGS &middot; COMPANIES</h6>
+      <h6 className="display-6 text-muted animated fadeInUp" style={styles.sub}>WEDDINGS &middot; TEAMS &middot; CLUBS</h6>
       
             
 
@@ -66,7 +70,7 @@ export default props => (
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
-                  <option>More</option>
+                  <option>More than 3</option>
                 </select>
               </div>
               
@@ -92,7 +96,7 @@ export default props => (
               
               
               
-              <button type="submit" className="btn btn-primary">Submit</button>
+              <button type="submit" className="btn btn-primary" onClick={submit}>Submit</button>
             </fieldset>
           </form>
 

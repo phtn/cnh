@@ -11,8 +11,8 @@ import GSK3 from '../assets/erGSK3_40.jpg'
 export default props => (
   <div className="animated fadeIn" style={props.body}>
     <div className="jumbotron" style={props.jumbo}>
-      <h3 className="display-4 animated fadeInDown" style={props.res}>RESERVATIONS</h3>
-        
+      <h3 className="display-4 animated fadeInDown" style={props.res}>NEW ROOMS</h3>
+      <h6 className="display-6 text-muted animated fadeInUp" style={props.sub}>215 &middot; 862 &middot; 5221</h6>
       <div className="list-group">
         <a href="" className="list-group-item list-group-item-action flex-column align-items-start active">
           <div className="d-flex w-100 justify-content-between">
