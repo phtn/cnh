@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import fire from '../database/Fire'
 
+
 const styles = {
   body: {backgroundColor: `transparent`, textAlign: 'center'},
   jumbo: {backgroundColor: 'transparent', marginTop: -25},
@@ -85,20 +86,34 @@ class Group extends Component {
       arrivalDate,
       giftbags,
       specialRequest
+    }, ()=> {
+      // Show Success Toast
+      this.props.showToast()
     })
-    console.log(email)
+  }
+  clearInputs(){
+    this.refs.inputEmail.value = ''
+    this.refs.inputName.value = ''
+    this.refs.inputPhone.value = ''
+    this.refs.inputGroupName.value = ''
+    this.refs.inputRooms.value = ''
+    this.refs.inputArrivalDate.value = ''
+    this.refs.inputSpecialRequest.value = ''
   }
   handleSubmit(e){
     e.preventDefault()
     this.handleInsertData(this.state.email, this.state.name, this.state.phone, this.state.groupName, this.state.groupType, this.state.numberOfRooms, this.state.numberOfNights, this.state.arrivalDate, this.state.giftbags, this.state.specialRequest)
+    this.clearInputs()
   }
   
   render(){
-    console.log(this.props.keyCount)
+    
     return(
       <div>
+        
         <div className="animated fadeIn" style={styles.body}>
         <div className="jumbotron" style={styles.jumbo}>
+        
           <h3 className="display-4 animated fadeInDown" style={styles.res}>GROUP RESERVATIONS</h3>
           <h6 className="display-6 text-muted animated fadeInUp" style={styles.sub}>WEDDINGS &middot; TEAMS &middot; CLUBS</h6>
           
@@ -110,23 +125,23 @@ class Group extends Component {
                 
                 <div className="form-group">
                   <label htmlFor="exampleInputEmail1">Email address</label>
-                  <input onChange={this.handleEmailChange} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
+                  <input ref="inputEmail" onChange={this.handleEmailChange} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
                   <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 
                 <div className="form-group">
                   <label htmlFor="contactName">Contact Name</label>
-                  <input onChange={this.handleNameChange} type="text" className="form-control" id="contactName" placeholder="Contact Name"/>
+                  <input ref="inputName" onChange={this.handleNameChange} type="text" className="form-control" id="contactName" placeholder="Contact Name"/>
                 </div>
 
                 <div className="form-group">
                   <label htmlFor="phoneNumber">Phone Number</label>
-                  <input onChange={this.handlePhoneChange} type="number" className="form-control" id="phoneNumber" placeholder="Phone Number"/>
+                  <input ref="inputPhone" onChange={this.handlePhoneChange} type="number" className="form-control" id="phoneNumber" placeholder="Phone Number"/>
                 </div>
 
                 <div className="form-group">
                   <label htmlFor="groupName">Group Name</label>
-                  <input onChange={this.handleGroupNameChange} type="text" className="form-control" id="groupName" placeholder="Group Name"/>
+                  <input ref="inputGroupName" onChange={this.handleGroupNameChange} type="text" className="form-control" id="groupName" placeholder="Group Name"/>
                 </div>
 
 
@@ -143,8 +158,8 @@ class Group extends Component {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="phoneNumber">Number of Rooms</label>
-                  <input onChange={this.handleNumberOfRoomsChange} type="number" className="form-control" id="phoneNumber" placeholder="Number of Rooms needed"/>
+                  <label htmlFor="numberOfRooms">Number of Rooms</label>
+                  <input ref="inputRooms" onChange={this.handleNumberOfRoomsChange} type="number" className="form-control" id="phoneNumber" placeholder="Number of Rooms needed"/>
                 </div>
 
                 <div className="form-group">
@@ -153,13 +168,15 @@ class Group extends Component {
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
-                    <option>More than 3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>More than 5</option>
                   </select>
                 </div>
                 
                 <div className="form-group">
-                  <label htmlFor="phoneNumber">Arrival Date</label>
-                  <input onChange={this.handleArrivalDateChange} type="number" className="form-control" id="arrival" placeholder="MM / DD / YYYY"/>
+                  <label htmlFor="arrivalDate">Arrival Date</label>
+                  <input ref="inputArrivalDate" onChange={this.handleArrivalDateChange} type="number" className="form-control" id="arrival" placeholder="MM / DD / YYYY"/>
                 </div>
 
                 
@@ -174,7 +191,7 @@ class Group extends Component {
 
                 <div className="form-group">
                   <label htmlFor="exampleTextarea">Special Requests</label>
-                  <textarea onChange={this.handleSpecialRequestChange} className="form-control" id="requests" rows="3"></textarea>
+                  <textarea ref="inputSpecialRequest" onChange={this.handleSpecialRequestChange} className="form-control" id="requests" rows="3"></textarea>
                 </div>
                 
                 
@@ -184,10 +201,18 @@ class Group extends Component {
             </form>
 
 
-
+            
             
         </div>
-        </div>  
+
+        
+
+        </div>
+
+
+        
+
+
       </div>
     )
   }

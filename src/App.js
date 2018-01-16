@@ -9,9 +9,7 @@ import Footer from './components/Footer'
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import Slider from 'react-slick'
-
-// Firebase
-import fire from './database/Fire'
+import Notifications, { notify } from 'react-notify-toast'
 
 const styles = {
   body: {backgroundColor: `transparent`, textAlign: 'center'},
@@ -32,37 +30,16 @@ const settings = {
   autoplay: false,
   autoplaySpeed: 5000,
   fade: false,
-  initialSlide: 0
+  initialSlide: 2
 }
 
 class App extends Component {
-  constructor(){
-    super()
-    this.state = {
-      keyCount: 0
-    }
+  
+  // TOAST
+  show(){
+    let toastColor = { background: '#1a1a1a', text: '#eeeeee' }
+    notify.show('Submit Successful!', 'custom', 5000, toastColor)
   }
-  componentDidMount(){
-    // let db = fire.database()
-    // db.ref('logs/'+ Math.floor(Math.random()+100)).set(Math.random())
-    let db = fire.database().ref('groups')
-    db.once('value').then(snap=> {
-      console.log(snap.val())
-      // count data
-      function countData (object){
-        let length = 0
-        for (let key in object){
-          if (object.hasOwnProperty(key)){
-            ++length
-          }
-        }
-        return length
-      }
-      // console.log(countData(snap.val()))
-      this.setState({keyCount: countData(snap.val())})
-    })
-  }
-
 
   render() {
     const home =()=> this.refs.slider.slickGoTo(0)
@@ -70,6 +47,7 @@ class App extends Component {
     const group =()=> this.refs.slider.slickGoTo(2)
     return (
       <div>
+        <Notifications options={{zIndex: 5000}}/>
       <Slider {...settings} ref='slider'>
 
       <div className="animated fadeIn" style={styles.body}>
@@ -94,7 +72,7 @@ class App extends Component {
       </div>
 
       <div className="animated fadeIn" style={styles.body}>
-        <Group keyCount={this.state.keyCount}/>
+        <Group showToast={this.show}/>
       </div>
       
       </Slider>
