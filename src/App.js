@@ -1,16 +1,22 @@
-import React, { Component } from 'react';
-import './animate.css';
+import React, { Component } from 'react'
+import './animate.css'
 import './bootstrap.min.css'
+// import LOGO from './assets/clarion.jpg'
 import FrontSlide from './components/FrontSlide'
 import Reservations from './components/Reservations'
 import Group from './components/Group'
 import Footer from './components/Footer'
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
 import Slider from 'react-slick'
+
+// Firebase
+import fire from './database/Fire'
+
 const styles = {
   body: {backgroundColor: `transparent`, textAlign: 'center'},
-  jumbo: {backgroundColor: 'transparent', marginTop: -25},
+  logo: {borderRadius: 100, textAlign: 'center',boxShadow: '2px 2px 2px 1px rgba(0, 0, 0, 0.2)', left: window.innerWidth/2},
+  jumbo: {backgroundColor: 'transparent', marginTop: -15, textAlign: 'center'},
   title: {color: '#100', fontSize: 30, textAlign: 'center', fontFamily: 'Roboto, sans-serif', fontWeight: 100},
   res: {color: '#100', fontSize: 30, textAlign: 'center', fontFamily: 'Roboto, sans-serif', fontWeight: 100},
   sub: {color: '#100', textAlign: 'center'},
@@ -30,6 +36,34 @@ const settings = {
 }
 
 class App extends Component {
+  constructor(){
+    super()
+    this.state = {
+      keyCount: 0
+    }
+  }
+  componentDidMount(){
+    // let db = fire.database()
+    // db.ref('logs/'+ Math.floor(Math.random()+100)).set(Math.random())
+    let db = fire.database().ref('groups')
+    db.once('value').then(snap=> {
+      console.log(snap.val())
+      // count data
+      function countData (object){
+        let length = 0
+        for (let key in object){
+          if (object.hasOwnProperty(key)){
+            ++length
+          }
+        }
+        return length
+      }
+      // console.log(countData(snap.val()))
+      this.setState({keyCount: countData(snap.val())})
+    })
+  }
+
+
   render() {
     const home =()=> this.refs.slider.slickGoTo(0)
     const reserve =()=> this.refs.slider.slickGoTo(1)
@@ -39,6 +73,7 @@ class App extends Component {
       <Slider {...settings} ref='slider'>
 
       <div className="animated fadeIn" style={styles.body}>
+
         <div className="jumbotron" style={styles.jumbo}>
           <h1 className="display-3 animated fadeInDown" style={styles.title}>Clarion INN & SUITES</h1>
           <h6 className="display-6 text-muted animated fadeInUp" style={styles.sub}>NEW HOPE &middot; LAMBERTVILLE</h6>
@@ -59,7 +94,7 @@ class App extends Component {
       </div>
 
       <div className="animated fadeIn" style={styles.body}>
-        <Group/>
+        <Group keyCount={this.state.keyCount}/>
       </div>
       
       </Slider>

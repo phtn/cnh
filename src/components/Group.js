@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { Component } from 'react'
+import fire from '../database/Fire'
 
 const styles = {
   body: {backgroundColor: `transparent`, textAlign: 'center'},
@@ -8,102 +9,187 @@ const styles = {
   img: {diplay: 'block', width: '100%', height: 'auto'},
   badge: {marginRight: 10}
 }
-const submit = e => {
-  e.preventDefault()
-  console.log('test')
-}
-export default props => (
-  <div>
-    <div className="animated fadeIn" style={styles.body}>
-    <div className="jumbotron" style={styles.jumbo}>
-      <h3 className="display-4 animated fadeInDown" style={styles.res}>GROUP RESERVATIONS</h3>
-      <h6 className="display-6 text-muted animated fadeInUp" style={styles.sub}>WEDDINGS &middot; TEAMS &middot; CLUBS</h6>
-      
+
+
+class Group extends Component {
+  constructor(){
+    super()
+    this.state = {
+      email: '',
+      name: '',
+      phone: '',
+      groupName: '',
+      groupType: '',
+      numberOfRooms: '1',
+      numberOfNights: '1',
+      arrivalDate: '',
+      giftbags: 'Yes',
+      specialRequest: 'None',
+
+    }
+    this.handleEmailChange = this.handleEmailChange.bind(this)
+    this.handleNameChange = this.handleNameChange.bind(this)
+    this.handlePhoneChange = this.handlePhoneChange.bind(this)
+    this.handleGroupNameChange = this.handleGroupNameChange.bind(this)
+    this.handleGroupTypeChange = this.handleGroupTypeChange.bind(this)
+    this.handleNumberOfRoomsChange = this.handleNumberOfRoomsChange.bind(this)
+    this.handleNumberOfNightsChange = this.handleNumberOfNightsChange.bind(this)
+    this.handleArrivalDateChange = this.handleArrivalDateChange.bind(this)
+    this.handleGiftbagsChange = this.handleGiftbagsChange.bind(this)
+    this.handleSpecialRequestChange = this.handleSpecialRequestChange.bind(this)
+
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
+  handleEmailChange(e){
+    this.setState({email: e.target.value})
+  }
+  handleNameChange(e){
+    this.setState({name: e.target.value})
+  }
+  handlePhoneChange(e){
+    this.setState({phone: e.target.value})
+  }
+  handleGroupNameChange(e){
+    this.setState({groupName: e.target.value})
+  }
+  handleGroupTypeChange(e){
+    this.setState({groupType: e.target.value})
+  }
+  handleNumberOfRoomsChange(e){
+    this.setState({numberOfRooms: e.target.value})
+  }
+  handleNumberOfNightsChange(e){
+    this.setState({numberOfNights: e.target.value})
+  }
+  handleArrivalDateChange(e){
+    this.setState({arrivalDate: e.target.value})
+  }
+  handleGiftbagsChange(e){
+    this.setState({giftbags: e.target.value})
+  }
+  handleSpecialRequestChange(e){
+    this.setState({specialRequest: e.target.value})
+  }
+
+  handleInsertData(email, name, phone, groupName, groupType, numberOfRooms, numberOfNights, arrivalDate, giftbags, specialRequest){
+    
+    const db = fire.database().ref('groups/' + new Date())
+    db.set({
+      email,
+      name,
+      phone,
+      groupName,
+      groupType,
+      numberOfRooms,
+      numberOfNights,
+      arrivalDate,
+      giftbags,
+      specialRequest
+    })
+    console.log(email)
+  }
+  handleSubmit(e){
+    e.preventDefault()
+    this.handleInsertData(this.state.email, this.state.name, this.state.phone, this.state.groupName, this.state.groupType, this.state.numberOfRooms, this.state.numberOfNights, this.state.arrivalDate, this.state.giftbags, this.state.specialRequest)
+  }
+  
+  render(){
+    console.log(this.props.keyCount)
+    return(
+      <div>
+        <div className="animated fadeIn" style={styles.body}>
+        <div className="jumbotron" style={styles.jumbo}>
+          <h3 className="display-4 animated fadeInDown" style={styles.res}>GROUP RESERVATIONS</h3>
+          <h6 className="display-6 text-muted animated fadeInUp" style={styles.sub}>WEDDINGS &middot; TEAMS &middot; CLUBS</h6>
+          
+                
+
+            <form>
+              <fieldset>
+                <legend>Request Group Rates</legend>
+                
+                <div className="form-group">
+                  <label htmlFor="exampleInputEmail1">Email address</label>
+                  <input onChange={this.handleEmailChange} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
+                  <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                
+                <div className="form-group">
+                  <label htmlFor="contactName">Contact Name</label>
+                  <input onChange={this.handleNameChange} type="text" className="form-control" id="contactName" placeholder="Contact Name"/>
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="phoneNumber">Phone Number</label>
+                  <input onChange={this.handlePhoneChange} type="number" className="form-control" id="phoneNumber" placeholder="Phone Number"/>
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="groupName">Group Name</label>
+                  <input onChange={this.handleGroupNameChange} type="text" className="form-control" id="groupName" placeholder="Group Name"/>
+                </div>
+
+
+
+                <div className="form-group">
+                  <label htmlFor="groupType">Group Type</label>
+                  <select onChange={this.handleGroupTypeChange} className="form-control" id="groupType">
+                    <option>Wedding</option>
+                    <option>Company</option>
+                    <option>Sports Team</option>
+                    <option>Family</option>
+                    <option>Club</option>
+                  </select>
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="phoneNumber">Number of Rooms</label>
+                  <input onChange={this.handleNumberOfRoomsChange} type="number" className="form-control" id="phoneNumber" placeholder="Number of Rooms needed"/>
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="stay">Nights of Stay</label>
+                  <select onChange={this.handleNumberOfNightsChange} className="form-control" id="stay">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>More than 3</option>
+                  </select>
+                </div>
+                
+                <div className="form-group">
+                  <label htmlFor="phoneNumber">Arrival Date</label>
+                  <input onChange={this.handleArrivalDateChange} type="number" className="form-control" id="arrival" placeholder="MM / DD / YYYY"/>
+                </div>
+
+                
+
+                <div className="form-group">
+                  <label htmlFor="giftBags">Gift Bags</label>
+                  <select onChange={this.handleGiftbagsChange} multiple="" className="form-control" id="giftBags">
+                    <option>Yes</option>
+                    <option>No</option>
+                  </select>
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="exampleTextarea">Special Requests</label>
+                  <textarea onChange={this.handleSpecialRequestChange} className="form-control" id="requests" rows="3"></textarea>
+                </div>
+                
+                
+                
+                <button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>Submit</button>
+              </fieldset>
+            </form>
+
+
+
             
-
-          <form>
-            <fieldset>
-              <legend>Request Group Rates</legend>
-              
-              <div className="form-group">
-                <label htmlFor="exampleInputEmail1">Email address</label>
-                <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
-                <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
-              </div>
-              
-              <div className="form-group">
-                <label htmlFor="contactName">Contact Name</label>
-                <input type="text" className="form-control" id="contactName" placeholder="Contact Name"/>
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="phoneNumber">Phone Number</label>
-                <input type="number" className="form-control" id="phoneNumber" placeholder="Phone Number"/>
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="groupName">Group Name</label>
-                <input type="number" className="form-control" id="groupName" placeholder="Group Name"/>
-              </div>
-
-
-
-              <div className="form-group">
-                <label htmlFor="groupType">Group Type</label>
-                <select className="form-control" id="groupType">
-                  <option>Wedding</option>
-                  <option>Company</option>
-                  <option>Sports Team</option>
-                  <option>Family</option>
-                  <option>Club</option>
-                </select>
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="phoneNumber">Number of Rooms</label>
-                <input type="number" className="form-control" id="phoneNumber" placeholder="Number of Rooms needed"/>
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="stay">Nights of Stay</label>
-                <select className="form-control" id="stay">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>More than 3</option>
-                </select>
-              </div>
-              
-              <div className="form-group">
-                <label htmlFor="phoneNumber">Arrival Date</label>
-                <input type="number" className="form-control" id="arrival" placeholder="MM / DD / YYYY"/>
-              </div>
-
-              
-
-              <div className="form-group">
-                <label htmlFor="giftBags">Gift Bags</label>
-                <select multiple="" className="form-control" id="giftBags">
-                  <option>Yes</option>
-                  <option>No</option>
-                </select>
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="exampleTextarea">Other Requests</label>
-                <textarea className="form-control" id="requests" rows="3"></textarea>
-              </div>
-              
-              
-              
-              <button type="submit" className="btn btn-primary" onClick={submit}>Submit</button>
-            </fieldset>
-          </form>
-
-
-
-         
-    </div>
-    </div>  
-  </div>
-)
+        </div>
+        </div>  
+      </div>
+    )
+  }
+}
+export default Group
