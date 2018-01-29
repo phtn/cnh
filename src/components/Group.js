@@ -3,8 +3,9 @@ import fire from '../database/Fire'
 
 
 const styles = {
+  container: {display: 'flex', justifyContent: 'center'},
   body: {backgroundColor: `transparent`, textAlign: 'center'},
-  jumbo: {backgroundColor: 'transparent', marginTop: -25},
+  jumbo: {backgroundColor: 'transparent', marginTop: -15},
   res: {color: '#100', fontSize: 30, textAlign: 'center', fontFamily: 'Roboto, sans-serif', fontWeight: 100},
   sub: {color: '#100', textAlign: 'center'},
   img: {diplay: 'block', width: '100%', height: 'auto'},
@@ -109,7 +110,7 @@ class Group extends Component {
   render(){
     
     return(
-      <div>
+      <div style={styles.container}>
         
         <div className="animated fadeIn" style={styles.body}>
         <div className="jumbotron" style={styles.jumbo}>
@@ -125,7 +126,7 @@ class Group extends Component {
                 
                 <div className="form-group">
                   <label htmlFor="exampleInputEmail1">Email address</label>
-                  <input ref="inputEmail" onChange={this.handleEmailChange} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
+                  <input  ref="inputEmail" onChange={this.handleEmailChange} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
                   <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 

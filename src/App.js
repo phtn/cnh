@@ -3,9 +3,11 @@ import './animate.css'
 import './bootstrap.min.css'
 // import LOGO from './assets/clarion.jpg'
 import FrontSlide from './components/FrontSlide'
-import Reservations from './components/Reservations'
+import Rooms from './components/Rooms'
 import Group from './components/Group'
+import Dest from './components/Destination'
 import Footer from './components/Footer'
+import IconFooter from './components/IconFooter'
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import Slider from 'react-slick'
@@ -24,13 +26,13 @@ const styles = {
 }
 const settings = {
   dots: false,
-  infinite: true,
+  infinite: false,
   speed: 700,
   arrows: false,
   autoplay: false,
   autoplaySpeed: 5000,
   fade: false,
-  initialSlide: 2
+  initialSlide: 1
 }
 
 class App extends Component {
@@ -40,11 +42,32 @@ class App extends Component {
     let toastColor = { background: '#1a1a1a', text: '#eeeeee' }
     notify.show('Submit Successful!', 'custom', 5000, toastColor)
   }
-
+  showPeddlers(){
+    let toastColor = { background: '#1a1a1a', text: '#eeeeee' }
+    notify.show("Peddler's Village Distance: 2.5 mi Drive: 4 min" , 'custom', 5000, toastColor)
+  }
+  showBridge(){
+    let toastColor = { background: '#1a1a1a', text: '#eeeeee' }
+    notify.show('New Hope Bridge Distance: 2 mi Drive: 6 min' , 'custom', 5000, toastColor)
+  }
+  showLambert(){
+    let toastColor = { background: '#1a1a1a', text: '#eeeeee' }
+    notify.show('Lambertville Distance: 2.5 mi Drive: 7 min' , 'custom', 5000, toastColor)
+  }
+  showNewHope(){
+    let toastColor = { background: '#1a1a1a', text: '#eeeeee' }
+    notify.show('New Hope Main St Distance: 2 mi Drive: 6 min' , 'custom', 5000, toastColor)
+  }
+  showCrossing(){
+    let toastColor = { background: '#1a1a1a', text: '#eeeeee' }
+    notify.show('Washington Xing Distance: 4.6 mi Drive: 9 min' , 'custom', 5000, toastColor)
+  }
   render() {
     const home =()=> this.refs.slider.slickGoTo(0)
-    const reserve =()=> this.refs.slider.slickGoTo(1)
+    const rooms =()=> this.refs.slider.slickGoTo(1)
     const group =()=> this.refs.slider.slickGoTo(2)
+    const dest =()=> this.refs.slider.slickGoTo(3)
+    const events =()=> this.refs.slider.slickGoTo(4)
     return (
       <div>
         <Notifications options={{zIndex: 5000}}/>
@@ -61,22 +84,41 @@ class App extends Component {
       </div>
       
       <div>
-        <Reservations 
+        {/* <Reservations 
           body={styles.body} 
           jumbo={styles.jumbo} 
           res={styles.res}
           sub={styles.sub}
           img={styles.img}
           badge={styles.badge}
-          />
+          /> */}
+
+          <Rooms jumbo={styles.jumbo} res={styles.res} sub={styles.sub}/>
       </div>
 
       <div className="animated fadeIn" style={styles.body}>
         <Group showToast={this.show}/>
       </div>
+
+      <div className="animated fadeIn" style={styles.body}>
+        <Dest 
+          bridge={this.showBridge}          
+          peddlers={this.showPeddlers} 
+          newhope={this.showNewHope}
+          crossing={this.showCrossing}
+          
+          jumbo={styles.jumbo} 
+          res={styles.res} 
+          sub={styles.sub}/>
+      </div>
       
       </Slider>
-      <Footer reserve={reserve} group={group} home={home}/>
+      <IconFooter 
+        home={home} 
+        rooms={rooms} 
+        group={group}
+        dest={dest}
+        events={events} />
       </div>
     )
   }
