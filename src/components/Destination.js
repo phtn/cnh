@@ -2,7 +2,7 @@ import React from 'react'
 
 import NH1 from '../assets/erNH_40.jpg'
 import PED from '../assets/peddlers.jpg'
-import LAM from '../assets/lambert.jpg'
+// import LAM from '../assets/lambert.jpg'
 import NH2 from '../assets/newhope.jpg'
 import CRS from '../assets/crossing.jpg'
 

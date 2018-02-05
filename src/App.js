@@ -4,9 +4,10 @@ import './bootstrap.min.css'
 // import LOGO from './assets/clarion.jpg'
 import FrontSlide from './components/FrontSlide'
 import Rooms from './components/Rooms'
+import Restaurant from './components/Restaurant'
 import Group from './components/Group'
 import Dest from './components/Destination'
-import Footer from './components/Footer'
+// import Footer from './components/Footer'
 import IconFooter from './components/IconFooter'
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
@@ -62,12 +63,17 @@ class App extends Component {
     let toastColor = { background: '#1a1a1a', text: '#eeeeee' }
     notify.show('Washington Xing Distance: 4.6 mi Drive: 9 min' , 'custom', 5000, toastColor)
   }
+  
   render() {
     const home =()=> this.refs.slider.slickGoTo(0)
     const rooms =()=> this.refs.slider.slickGoTo(1)
-    const group =()=> this.refs.slider.slickGoTo(2)
-    const dest =()=> this.refs.slider.slickGoTo(3)
-    const events =()=> this.refs.slider.slickGoTo(4)
+    const rest =()=> this.refs.slider.slickGoTo(2)
+    const group =()=> this.refs.slider.slickGoTo(3)
+    const dest =()=> this.refs.slider.slickGoTo(4)
+    const events =()=> this.refs.slider.slickGoTo(6)
+
+    
+
     return (
       <div>
         <Notifications options={{zIndex: 5000}}/>
@@ -84,16 +90,11 @@ class App extends Component {
       </div>
       
       <div>
-        {/* <Reservations 
-          body={styles.body} 
-          jumbo={styles.jumbo} 
-          res={styles.res}
-          sub={styles.sub}
-          img={styles.img}
-          badge={styles.badge}
-          /> */}
+        <Rooms jumbo={styles.jumbo} res={styles.res} sub={styles.sub}/>
+      </div>
 
-          <Rooms jumbo={styles.jumbo} res={styles.res} sub={styles.sub}/>
+      <div className="animated fadeIn" style={styles.body}>
+        <Restaurant jumbo={styles.jumbo} res={styles.res} sub={styles.sub}/>
       </div>
 
       <div className="animated fadeIn" style={styles.body}>
@@ -114,11 +115,12 @@ class App extends Component {
       
       </Slider>
       <IconFooter 
-        home={home} 
-        rooms={rooms} 
-        group={group}
-        dest={dest}
-        events={events} />
+          home={home} 
+          rooms={rooms}
+          rest={rest} 
+          group={group}
+          dest={dest}
+          events={events} />    
       </div>
     )
   }

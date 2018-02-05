@@ -16,7 +16,10 @@ const styles={
 export default props => (
   <div style={styles.container}>
     <button type="button" onClick={props.home} className="btn btn-outline-secondary" style={styles.button}>home</button>
-    <button type="button" onClick={props.reserve} className="btn btn-outline-secondary" style={styles.button}>reservations</button>
+    <button type="button" onClick={props.rooms} className="btn btn-outline-secondary" style={styles.button}>rooms</button>
     <button type="button" onClick={props.group} className="btn btn-outline-secondary" style={styles.button}>group</button>
+    <button type="button" onClick={props.dest} className="btn btn-outline-secondary" style={styles.button}>desinations</button>
+    <br/>
+    test
   </div>
 )

@@ -7,14 +7,11 @@ import GSK1 from '../assets/erGSK1_40.jpg'
 const styles = {
   container: {
     height: window.innerHeight,
-    // display: 'flex',
-    // alignItems: 'center',
-    // justifyContent: 'center'
   },
   img: {
     height: 200
   },
-  col: {marginBottom: 20}
+  col: {marginBottom: 20, marginLeft: 5}
 }
 
 
