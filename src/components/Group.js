@@ -21,14 +21,14 @@ class Group extends Component {
       name: '',
       phone: '',
       groupName: '',
-      groupType: '',
+      groupType: 'Wedding',
       numberOfRooms: '1',
       numberOfNights: '1',
       arrivalDate: '',
       giftbags: 'Yes',
       specialRequest: 'None',
-
     }
+
     this.handleEmailChange = this.handleEmailChange.bind(this)
     this.handleNameChange = this.handleNameChange.bind(this)
     this.handlePhoneChange = this.handlePhoneChange.bind(this)
@@ -39,9 +39,9 @@ class Group extends Component {
     this.handleArrivalDateChange = this.handleArrivalDateChange.bind(this)
     this.handleGiftbagsChange = this.handleGiftbagsChange.bind(this)
     this.handleSpecialRequestChange = this.handleSpecialRequestChange.bind(this)
-
     this.handleSubmit = this.handleSubmit.bind(this)
   }
+  
   handleEmailChange(e){
     this.setState({email: e.target.value})
   }
